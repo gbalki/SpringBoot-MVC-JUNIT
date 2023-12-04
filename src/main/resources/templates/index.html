@@ -36,34 +36,19 @@
 
 <div class="container">
 
-    <!--	<form class="form-inline" method="POST" th:action="@{/}" th:object="${student}">-->
-    <!--		<label class="sr-only" for="firstname">Name</label>-->
-    <!--		<input type="text" class="form-control mb-2 mr-sm-2" name="firstname" placeholder="Enter First Name" required>-->
+    	<form class="form-inline" method="POST" th:action="@{/}" th:object="${student}">
+    		<label class="sr-only" for="firstname">First Name</label>
+    		<input type="text" class="form-control mb-2 mr-sm-2" name="firstname" placeholder="Enter First Name" required>
 
-    <!--		<label class="sr-only" for="lastname">Name</label>-->
-    <!--		<input type="text" class="form-control mb-2 mr-sm-2" name="lastname" placeholder="Enter Last Name" required>-->
+    		<label class="sr-only" for="lastname">Last Name</label>
+    		<input type="text" class="form-control mb-2 mr-sm-2" name="lastname" placeholder="Enter Last Name" required>
 
-    <!--		<label class="sr-only" for="emailAddress">Name</label>-->
-    <!--		<input type="text" class="form-control mb-2 mr-sm-2" name="emailAddress" placeholder="Enter Email Address" required>-->
-
-
-    <!--		<button type="submit" class="btn btn-color mb-2">Submit</button>-->
-    <!--	</form>-->
-
-    <form class="form-inline">
-        <label class="sr-only">Name</label>
-        <input type="text" class="form-control mb-2 mr-sm-2" name="firstname" placeholder="Enter First Name" required>
-
-        <label class="sr-only">Name</label>
-        <input type="text" class="form-control mb-2 mr-sm-2" name="lastname" placeholder="Enter Last Name" required>
-
-        <label class="sr-only">Name</label>
-        <input type="text" class="form-control mb-2 mr-sm-2" name="emailAddress" placeholder="Enter Email Address"
-               required>
+    		<label class="sr-only" for="emailAddress">Email Address</label>
+    		<input type="text" class="form-control mb-2 mr-sm-2" name="emailAddress" placeholder="Enter Email Address" required>
 
 
-        <button class="btn btn-color mb-2">Submit</button>
-    </form>
+    		<button type="submit" class="btn btn-color mb-2">Submit</button>
+    	</form>
 
 
     <table class="students">
@@ -74,60 +59,18 @@
             <th>Email</th>
         </tr>
 
-        <!--	<tr th:each="student, iterator : ${students}" >-->
-        <!--		<td th:text="${iterator.index + 1}" th:onclick="|studentInfo('${student.id}');|"></td>-->
-        <!--		<td th:text="${student.firstname}" th:onclick="|studentInfo('${student.id}');|"></td>-->
-        <!--		<td th:text="${student.lastname}" th:onclick="|studentInfo('${student.id}');|"></td>-->
-        <!--		<td > <span  th:text="${student.emailAddress}" th:onclick="|studentInfo('${student.id}');|"></span>-->
-        <!--		<span>-->
-        <!--			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill float-right pointer" style="color: #d3d3d3" viewBox="0 0 16 16" th:onclick="|deleteStudent('${student.id}');|">-->
-        <!--  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>-->
-        <!--</svg>-->
-        <!--		</span>-->
-        <!--		</td>-->
-        <!--	</tr>-->
-
-        <tr>
-            <td> 1</td>
-            <td> Chad</td>
-            <td> Darby</td>
-            <td><span>  chad.darby@luv2code_school.com</span>
-                <span>
-			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                 class="bi bi-x-circle-fill float-right pointer" style="color: #d3d3d3" viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
-</svg>
-		</span>
-            </td>
-        </tr>
-
-        <tr>
-            <td> 2</td>
-            <td> Eric</td>
-            <td> Roby</td>
-            <td><span>  eric.roby@luv2code_school.com</span>
-                <span>
-			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                 class="bi bi-x-circle-fill float-right pointer" style="color: #d3d3d3" viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
-</svg>
-		</span>
-            </td>
-        </tr>
-
-        <tr>
-            <td> 3</td>
-            <td> Random</td>
-            <td> User</td>
-            <td><span>  random.user@luv2code_school.com</span>
-                <span>
-			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                 class="bi bi-x-circle-fill float-right pointer" style="color: #d3d3d3" viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
-</svg>
-		</span>
-            </td>
-        </tr>
+        	<tr th:each="student, iterator : ${students}" >
+        		<td th:text="${iterator.index + 1}" th:onclick="|studentInfo('${student.id}');|"></td>
+        		<td th:text="${student.firstname}" th:onclick="|studentInfo('${student.id}');|"></td>
+        		<td th:text="${student.lastname}" th:onclick="|studentInfo('${student.id}');|"></td>
+        		<td > <span  th:text="${student.emailAddress}" th:onclick="|studentInfo('${student.id}');|"></span>
+        		<span>
+        			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill float-right pointer" style="color: #d3d3d3" viewBox="0 0 16 16" th:onclick="|deleteStudent('${student.id}');|">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+        </svg>
+        		</span>
+        		</td>
+        	</tr>
 
     </table>
 </div>

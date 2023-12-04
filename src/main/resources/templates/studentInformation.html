@@ -33,8 +33,7 @@
     <div class="card">
         <h5 class="card-header">Receiving student information for: </h5>
         <div class="card-body">
-            <!--        <h5 class="card-title"><span th:text="${student.fullName}"></span></h5>-->
-            <h5 class="card-title"><span> Eric Roby</span></h5>
+            <h5 class="card-title"><span th:text="${student.fullName}"></span></h5>
         </div>
     </div>
 
@@ -53,71 +52,36 @@
                         </th>
                     </tr>
                     <tr class="table-success">
-                        <!--                        <td><span>Overall:</span> <span th:text="${mathAverage}"></span> </td>-->
-                        <td><span>Overall:</span> <span>100</span></td>
+                        <td><span>Overall:</span> <span th:text="${mathAverage}"></span> </td>
                     </tr>
-                    <!--                    <tr th:each="grade : ${student.studentGrades.mathGradeResults}">-->
-
-                    <!--                        <td >-->
-                    <!--                            <span th:text="${grade.grade}"></span>-->
-                    <!--                            <span>	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill float-right pointer" style="color: #d3d3d3" viewBox="0 0 16 16" th:onclick="|deleteMathGrade('${grade.id}');|">-->
-                    <!--  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>-->
-                    <!--</svg></span>-->
-                    <!--                        </td>-->
-                    <!--                    </tr>-->
-
-                    <tr>
+                    <tr th:each="grade : ${student.studentGrades.mathGradeResults}">
 
                         <td>
-                            <span>100</span>
+                            <span th:text="${grade.grade}"></span>
                             <span>	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                            class="bi bi-x-circle-fill float-right pointer" style="color: #d3d3d3"
-                                           viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
-</svg></span>
+                                           viewBox="0 0 16 16" th:onclick="|deleteMathGrade('${grade.id}');|">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                    </svg></span>
                         </td>
                     </tr>
 
-                    <tr>
 
-                        <td>
-                            <span>100</span>
-                            <span>	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                           class="bi bi-x-circle-fill float-right pointer" style="color: #d3d3d3"
-                                           viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
-</svg></span>
-                        </td>
-                    </tr>
                 </table>
-                <!--                <form class="form-inline" method="post">-->
-                <!--                <form id = "mathGrade" style="display: none;" method="post" action="/grades">-->
-                <!--                    <div class="form-group">-->
-                <!--                        <label for="grade">Grade</label>-->
-                <!--                        <input type="number" class="form-control" name="grade" placeholder="Enter grade" step="0.01" min="0" max="100">-->
-                <!--                        <small class="form-text text-muted">Enter student's grade.</small>-->
-
-                <!--                        <input type="number" class="form-control" name="studentId" th:value="${student.id}" style="display: none">-->
-
-                <!--                        <input type="text" class="form-control" name="gradeType" value="math" style="display: none">-->
-                <!--                    </div>-->
-                <!--                    <button type="submit" class="btn btn-color">Submit</button>-->
-                <!--                </form>-->
-
-                <form id="mathGrade" style="display: none;">
+                <form id="mathGrade" style="display: none;" method="post" action="/grades">
                     <div class="form-group">
                         <label for="grade">Grade</label>
                         <input type="number" class="form-control" name="grade" placeholder="Enter grade" step="0.01"
                                min="0" max="100">
                         <small class="form-text text-muted">Enter student's grade.</small>
 
-                        <input type="number" class="form-control" name="studentId" style="display: none">
+                        <input type="number" class="form-control" name="studentId" th:value="${student.id}"
+                               style="display: none">
 
                         <input type="text" class="form-control" name="gradeType" value="math" style="display: none">
                     </div>
-                    <button class="btn btn-color">Submit</button>
+                    <button type="submit" class="btn btn-color">Submit</button>
                 </form>
-
             </div>
             <div class="col-4">
                 <table class="students">
@@ -131,69 +95,33 @@
                         </th>
                     </tr>
                     <tr class="table-success">
-                        <!--                        <td><span>Overall:</span> <span th:text="${scienceAverage}"></span> </td>-->
-                        <td><span>Overall:</span> <span>100</span></td>
+                        <td><span>Overall:</span> <span th:text="${scienceAverage}"></span></td>
                     </tr>
-                    <!--                    <tr th:each="grade : ${student.studentGrades.scienceGradeResults}">-->
-                    <!--                        <td >-->
-                    <!--                            <span th:text="${grade.grade}"></span>-->
-                    <!--                            <span>	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill float-right pointer" style="color: #d3d3d3" viewBox="0 0 16 16" th:onclick="|deleteScienceGrade('${grade.id}');|">-->
-                    <!--  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>-->
-                    <!--</svg></span>-->
-                    <!--                        </td>-->
-                    <!--                    </tr>-->
-
-                    <tr>
-
+                    <tr th:each="grade : ${student.studentGrades.scienceGradeResults}">
                         <td>
-                            <span>100</span>
+                            <span th:text="${grade.grade}"></span>
                             <span>	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                            class="bi bi-x-circle-fill float-right pointer" style="color: #d3d3d3"
-                                           viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
-</svg></span>
-                        </td>
-                    </tr>
-
-                    <tr>
-
-                        <td>
-                            <span>100</span>
-                            <span>	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                           class="bi bi-x-circle-fill float-right pointer" style="color: #d3d3d3"
-                                           viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
-</svg></span>
+                                           viewBox="0 0 16 16" th:onclick="|deleteScienceGrade('${grade.id}');|">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                    </svg></span>
                         </td>
                     </tr>
                 </table>
-                <!--                <form id = "scienceGrade" style="display: none;"  method="post" action="/grades">-->
-                <!--                    <div class="form-group">-->
-                <!--                        <label for="grade">Grade</label>-->
-                <!--                        <input type="number" class="form-control" name="grade" placeholder="Enter grade" step="0.01" min="0" max="100">-->
-                <!--                        <small class="form-text text-muted">Enter student's grade.</small>-->
-
-                <!--                        <input type="number" class="form-control" name="studentId" th:value="${student.id}" style="display: none">-->
-
-                <!--                        <input type="text" class="form-control" name="gradeType" value="science" style="display: none">-->
-                <!--                    </div>-->
-                <!--                    <button type="submit" class="btn btn-color">Submit</button>-->
-                <!--                </form>-->
-
-                <form id="scienceGrade" style="display: none;">
+                <form id="scienceGrade" style="display: none;" method="post" action="/grades">
                     <div class="form-group">
                         <label for="grade">Grade</label>
                         <input type="number" class="form-control" name="grade" placeholder="Enter grade" step="0.01"
                                min="0" max="100">
                         <small class="form-text text-muted">Enter student's grade.</small>
 
-                        <input type="number" class="form-control" name="studentId" style="display: none">
+                        <input type="number" class="form-control" name="studentId" th:value="${student.id}"
+                               style="display: none">
 
                         <input type="text" class="form-control" name="gradeType" value="science" style="display: none">
                     </div>
-                    <button class="btn btn-color">Submit</button>
+                    <button type="submit" class="btn btn-color">Submit</button>
                 </form>
-
             </div>
             <div class="col-4">
                 <table class="students">
@@ -207,67 +135,32 @@
                         </th>
                     </tr>
                     <tr class="table-success">
-                        <!--                        <td><span>Overall:</span> <span th:text="${historyAverage}"></span> </td>-->
-                        <td><span>Overall:</span> <span>100</span></td>
+                        <td><span>Overall:</span> <span th:text="${historyAverage}"></span></td>
                     </tr>
-                    <!--                    <tr th:each="grade : ${student.studentGrades.historyGradeResults}">-->
-                    <!--                        <td >-->
-                    <!--                            <span th:text="${grade.grade}"></span>-->
-                    <!--                            <span>	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill float-right pointer" style="color: #d3d3d3" viewBox="0 0 16 16" th:onclick="|deleteHistoryGrade('${grade.id}');|">-->
-                    <!--  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>-->
-                    <!--</svg></span>-->
-                    <!--                        </td>-->
-                    <!--                    </tr>-->
-
-                    <tr>
-
+                    <tr th:each="grade : ${student.studentGrades.historyGradeResults}">
                         <td>
-                            <span>100</span>
+                            <span th:text="${grade.grade}"></span>
                             <span>	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                            class="bi bi-x-circle-fill float-right pointer" style="color: #d3d3d3"
-                                           viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
-</svg></span>
-                        </td>
-                    </tr>
-
-                    <tr>
-
-                        <td>
-                            <span>100</span>
-                            <span>	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                           class="bi bi-x-circle-fill float-right pointer" style="color: #d3d3d3"
-                                           viewBox="0 0 16 16">
-  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
-</svg></span>
+                                           viewBox="0 0 16 16" th:onclick="|deleteHistoryGrade('${grade.id}');|">
+                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+                    </svg></span>
                         </td>
                     </tr>
                 </table>
-                <!--                <form id = "historyGrade" style="display: none;"  method="post" action="/grades">-->
-                <!--                    <div class="form-group">-->
-                <!--                        <label for="grade">Grade</label>-->
-                <!--                        <input type="number" class="form-control" name="grade" placeholder="Enter grade" step="0.01" min="0" max="100">-->
-                <!--                        <small class="form-text text-muted">Enter student's grade.</small>-->
-
-                <!--                        <input type="number" class="form-control" name="studentId" th:value="${student.id}" style="display: none">-->
-
-                <!--                        <input type="text" class="form-control" name="gradeType" value="history" style="display: none">-->
-                <!--                    </div>-->
-                <!--                    <button type="submit" class="btn btn-color">Submit</button>-->
-                <!--                </form>-->
-
-                <form id="historyGrade" style="display: none;">
+                <form id="historyGrade" style="display: none;" method="post" action="/grades">
                     <div class="form-group">
                         <label for="grade">Grade</label>
                         <input type="number" class="form-control" name="grade" placeholder="Enter grade" step="0.01"
                                min="0" max="100">
                         <small class="form-text text-muted">Enter student's grade.</small>
 
-                        <input type="number" class="form-control" name="studentId" style="display: none">
+                        <input type="number" class="form-control" name="studentId" th:value="${student.id}"
+                               style="display: none">
 
                         <input type="text" class="form-control" name="gradeType" value="history" style="display: none">
                     </div>
-                    <button class="btn btn-color">Submit</button>
+                    <button type="submit" class="btn btn-color">Submit</button>
                 </form>
             </div>
         </div>
